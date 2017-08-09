@@ -218,6 +218,7 @@ float Q_atof (const char *str)
 }*/
 
 #ifdef _WIN32
+/*
 #if !defined(_MSC_VER) || (_MSC_VER < 1900)
 int snprintf(char *buffer, size_t count, char const *format, ...)
 {
@@ -231,6 +232,7 @@ int snprintf(char *buffer, size_t count, char const *format, ...)
 	return ret;
 }
 #endif // !(Visual Studio 2015+)
+*/
 #endif
 
 #if defined(_MSC_VER) && (_MSC_VER < 1400)

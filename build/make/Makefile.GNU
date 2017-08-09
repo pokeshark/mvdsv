@@ -49,7 +49,7 @@ else
 		LDFLAGS+= -lsocket -lnsl
 		CFLAGS+= -pthread -DBSD_COMP
 	else
-		ifeq ($(UNAME),CYGWIN_NT-10.0)
+		ifneq (,$(findstring _NT-,$(UNAME)))
 			LDFLAGS += -Lmingw32-libs/lib -static -lws2_32 -lwinmm
 			CFLAGS += -D_WIN32_WINNT=0x0501 -D_USE_32BIT_TIME_T -D__USE_MINGW_ANSI_STDIO -D_CONSOLE
 			STRIP=-strip
