@@ -84,4 +84,4 @@ deploy:
   file: "FILE TO UPLOAD"
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
