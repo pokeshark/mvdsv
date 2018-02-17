@@ -79,15 +79,9 @@ script:
   - mv build_${TARGET}/mvdsv${EXTENSION} uploads_to_gcs/${DATETIME}_${TRAVIS_COMMIT:0:7}_mvdsv${EXTENSION}
 
 deploy:
-  provider: gcs
-  access_key_id: GOOGIDU6SZSRYABCDMPF
-  secret_access_key:
-    secure: "Mz9ekafJMVUEjWeKA7hK+4UhDRyp74cZgAcWXozO54jb/NyyfzZWthr3Lu/41LwXrcSVWGruQTrcAvBt3jzm+v9X2lCAnBOENisbBu/HegCAdMt2XTRud9lisaL5IMiPIaA4sAPjlfkkHo9yxQqzXhF2/IqOiNYiDcUAKeXcvLY="
-  bucket: mvdsv
-  on:
-    repo: deurk/mvdsv
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: "FILE TO UPLOAD"
   skip_cleanup: true
-  upload-dir: commits/${TARGET}
-  local-dir: uploads_to_gcs
-  acl: public-read
-
+  on:
+    tags: true
